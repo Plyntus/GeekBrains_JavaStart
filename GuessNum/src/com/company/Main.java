@@ -2,12 +2,18 @@ package com.company;
 
 import java.util.Scanner;
 
+
 public class Main {
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Guess num");
-        int range = 10;
+        for (int i = 10; i <= 30; i += 10) playLevel(i);
+        System.out.println("You won!");
+        scanner.close();
+    }
+    private static void playLevel(int range){
         int number = (int)(Math.random() * range);
         while (true){
             System.out.println("Number between 0 and " + range);
@@ -21,6 +27,5 @@ public class Main {
                 System.out.println("More");
             }
         }
-        scanner.close();
     }
 }
